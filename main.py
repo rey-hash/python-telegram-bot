@@ -54,13 +54,7 @@ def send_something(message):
 
 
 
-# getFile
-# Downloading a file is straightforward
-# Returns a File object
-import requests
-file_info = tb.get_file(file_id)
 
-file = requests.get('https://api.telegram.org/file/bot{0}/{1}'.format(API_TOKEN, file_info.file_path))
 
 
 from telebot import types
@@ -119,31 +113,6 @@ def handle_messages(messages):
 bot.set_update_listener(handle_messages)
 bot.infinity_polling()
 
-
-import logging
-
-logger = telebot.logger
-telebot.logger.setLevel(logging.DEBUG) # Outputs debug messages to console.
-
-
-from telebot import apihelper
-
-apihelper.proxy = {'http':'http://127.0.0.1:3128'}
-
-apihelper.proxy = {'https':'socks5://userproxy:password@proxy_address:port'}
-
-apihelper.CUSTOM_REQUEST_SENDER = your_handler
-
-
-def custom_sender(method, url, **kwargs):
-    print("custom_sender. method: {}, url: {}, params: {}".format(method, url, kwargs.get("params")))
-    result = util.CustomRequestResponse('{"ok":true,"result":{"message_id": 1, "date": 1, "chat": {"id": 1, "type": "private"}}}')
-    return Result
-    
-    
-apihelper.CUSTOM_REQUEST_SENDER = custom_sender
-tb = TeleBot("test")
-res = tb.send_message(123, "Test")
 
 
 
