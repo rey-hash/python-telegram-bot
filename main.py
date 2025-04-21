@@ -64,9 +64,6 @@ tb.send_message(chat_id, "Send me another word:", reply_markup=markup)
 
 
 
-from telebot import apihelper
-
-apihelper.API_URL = "http://localhost:4200/bot{0}/{1}"
 
 
 def handle_messages(messages):
