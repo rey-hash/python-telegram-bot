@@ -83,12 +83,6 @@ def admin_of_group(message):
 	bot.send_message(message.chat.id, 'You are admin of this group!')
 
 
-
-import telebot
-
-TOKEN = '<token_string>'
-tb = telebot.TeleBot(TOKEN)	#create a new Telegram Bot object
-
 # Upon calling this function, TeleBot starts polling the Telegram servers for new messages.
 # - interval: int (default 0) - The interval between polling requests
 # - timeout: integer (default 20) - Timeout in seconds for long polling.
@@ -264,9 +258,6 @@ from telegram.ext import Updater, CommandHandler, CallbackContext
 
 
 
-def start(update: Update, context: CallbackContext):
-    """Responds when the user sends /start"""
-    update.message.reply_text("Hello! Welcome to my bot.")
 
 def help_command(update: Update, context: CallbackContext):
     """Provides a help message"""
