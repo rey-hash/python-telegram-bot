@@ -419,5 +419,5 @@ def stop(update: Update, context: CallbackContext):
 dp.add_handler(CommandHandler("stop", stop))
 
 
-
+bot.infinity_polling()
 
