@@ -1,3 +1,35 @@
+from flask import Flask
+from threading import Thread
+from telegram.ext import ApplicationBuilder, CommandHandler
+import os
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run_web():
+    app.run(host='0.0.0.0', port=8080)
+
+def run_bot():
+    from telegram import Update
+    from telegram.ext import ContextTypes
+
+    BOT_TOKEN = os.environ.get("BOT_TOKEN")
+
+    async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+        await update.message.reply_text("Hi, I'm alive!")
+
+    telegram_app = ApplicationBuilder().token(BOT_TOKEN).build()
+    telegram_app.add_handler(CommandHandler("start", start))
+    telegram_app.run_polling()
+
+# Start both web server and bot
+if __name__ == "__main__":
+    Thread(target=run_web).start()
+    run_bot()
+
 import telebot
 from telebot import types
 
