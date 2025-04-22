@@ -4,7 +4,7 @@ import telebot
 from telebot import types
 import os
 
-BOT_TOKEN = os.environ.get("8027621381:AAGuZ-nCc_NUNm9anX3aVG_P0btg8vgc_qM")
+BOT_TOKEN = "8027621381:AAGuZ-nCc_NUNm9anX3aVG_P0btg8vgc_qM"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # Flask Web Server for UptimeRobot
