@@ -9,3 +9,19 @@
 ## Install
 ```bash
 pip install -r requirements.txt
+
+
+export TELEGRAM_BOT_TOKEN=your_token_here
+python bot.py
+
+---
+
+## **Usage:**
+- `/start`, `/help`, `/about`, `/echo`, `/time`, `/id`, `/inline`
+- Inline buttons with callback
+- Normal text echo
+
+---
+
+### Would you like me to also give you a **ready-to-deploy Replit project for this bot structure?**  
+Reply **"Yes, Replit deploy"** if you want.
