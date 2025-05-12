@@ -25,3 +25,20 @@ python bot.py
 
 ### Would you like me to also give you a **ready-to-deploy Replit project for this bot structure?**  
 Reply **"Yes, Replit deploy"** if you want.
+
+
+
+# Telegram Echo Bot
+
+A simple modular Telegram bot using python-telegram-bot (async version).
+
+## Features
+- /start, /help, /about commands
+- /echo <text> command
+- /time command (shows server time)
+- /id command (shows user ID)
+- Inline button menu with callback handling
+- Simple echo of normal messages
+
+## Setup
+1. Install dependencies:
