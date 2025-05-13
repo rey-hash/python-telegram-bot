@@ -1,6 +1,9 @@
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import ContextTypes
+
+
+from telegram.ext import ContextTypes, CallbackQueryHandler
+
 
 # Inline button callback handler
 async def inline_button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -29,8 +32,7 @@ async def inline_button_callback(update: Update, context: ContextTypes.DEFAULT_T
 
 
 
-from telegram import Update
-from telegram.ext import ContextTypes, CallbackQueryHandler
+
 
 async def inline_button_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
