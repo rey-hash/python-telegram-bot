@@ -43,7 +43,7 @@ application.add_handler(CommandHandler("weather", commands.weather_command))
 callbacks.register_inline_handlers(app)
 
     # Echo normal text
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, messages.echo))
 
     # Start polling
     print("Bot is running. Press Ctrl+C to stop.")
