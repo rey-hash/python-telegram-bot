@@ -1,4 +1,9 @@
+
+
 import os
+
+
+ADMIN_ID = 6557975040  # Replace with your Telegram user ID
 
 def get_bot_token():
     # Get token from environment variable or ask user
