@@ -8,6 +8,20 @@ from telegram.ext import ContextTypes
 from datetime import datetime
 from utils.helpers import notify_admin
 
+
+from telegram import InlineKeyboardMarkup, InlineKeyboardButton
+
+
+async def menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    keyboard = [
+        [InlineKeyboardButton("Say Hello", callback_data='say_hello')],
+        [InlineKeyboardButton("Get User Info", callback_data='user_info')]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await update.message.reply_text("Choose an option:", reply_markup=reply_markup)
+
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     await update.message.reply_text("Hello! Welcome to the bot.")
