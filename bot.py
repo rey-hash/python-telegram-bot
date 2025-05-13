@@ -39,6 +39,11 @@ app.add_handler(CommandHandler("weather", commands.weather_command))
 # Inline Button Handlers
 callbacks.register_inline_handlers(app)
 
+# Register callback for inline buttons
+app.add_handler(CallbackQueryHandler(callbacks.inline_button_callback))
+
+
+
 # Echo text messages
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, messages.echo))
 
@@ -51,8 +56,3 @@ app.run_polling()
 
 
 
-# Register callback for inline buttons
-app.add_handler(CallbackQueryHandler(callbacks.inline_button_callback))
-
-# Echo normal text
-app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, messages.echo))
