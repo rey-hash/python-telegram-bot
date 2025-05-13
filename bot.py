@@ -1,7 +1,11 @@
 import logging
 import os
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
+from telegram.ext import ApplicationBuilder
 from handlers import commands, messages, callbacks  # Import callbacks added
+
+
+from telegram.ext import CommandHandler, MessageHandler, CallbackQueryHandler, filters
+
 
 # Logging setup
 logging.basicConfig(
@@ -41,3 +45,14 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, messages.echo))
 # Start Bot
 print("Bot is running. Press Ctrl+C to stop.")
 app.run_polling()
+
+
+
+
+
+
+# Register callback for inline buttons
+app.add_handler(CallbackQueryHandler(callbacks.inline_button_callback))
+
+# Echo normal text
+app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, messages.echo))
