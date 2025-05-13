@@ -36,6 +36,9 @@ app.add_handler(CommandHandler("reverse", commands.reverse_command))
 app.add_handler(CommandHandler("uppercase", commands.uppercase_command))
 app.add_handler(CommandHandler("weather", commands.weather_command))
 
+app.add_handler(CommandHandler("menu", commands.menu_command))  # Inline menu command
+
+
 # Inline Button Handlers
 callbacks.register_inline_handlers(app)
 
