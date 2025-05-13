@@ -40,7 +40,7 @@ application.add_handler(CommandHandler("weather", commands.weather_command))
 
 
     # Register inline buttons handlers
-    register_inline_handlers(app)
+callbacks.register_inline_handlers(app)
 
     # Echo normal text
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
