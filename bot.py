@@ -19,13 +19,25 @@ def main():
     token = get_bot_token()
     app = ApplicationBuilder().token(token).build()
 
-    # Register command handlers
-    app.add_handler(CommandHandler("start", commands.start))
-    app.add_handler(CommandHandler("help", commands.help_command))
-    app.add_handler(CommandHandler("about", commands.about))
-    app.add_handler(CommandHandler("echo", commands.echo_command))
-    app.add_handler(CommandHandler("time", commands.time_command))
-    app.add_handler(CommandHandler("id", commands.id_command))
+
+    
+
+
+# Register all commands:
+application.add_handler(CommandHandler("start", commands.start))
+application.add_handler(CommandHandler("help", commands.help_command))
+application.add_handler(CommandHandler("about", commands.about))
+application.add_handler(CommandHandler("echo", commands.echo_command))
+application.add_handler(CommandHandler("time", commands.time_command))
+application.add_handler(CommandHandler("id", commands.id_command))
+application.add_handler(CommandHandler("info", commands.info_command))
+application.add_handler(CommandHandler("chatinfo", commands.chatinfo_command))
+application.add_handler(CommandHandler("ping", commands.ping_command))
+application.add_handler(CommandHandler("reverse", commands.reverse_command))
+application.add_handler(CommandHandler("uppercase", commands.uppercase_command))
+application.add_handler(CommandHandler("weather", commands.weather_command))
+
+
 
     # Register inline buttons handlers
     register_inline_handlers(app)
