@@ -12,6 +12,12 @@ from utils.helpers import notify_admin
 from telegram import InlineKeyboardMarkup, InlineKeyboardButton
 
 
+
+
+
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import ContextTypes
+
 async def menu_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("Say Hello", callback_data='say_hello')],
