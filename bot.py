@@ -1,7 +1,7 @@
 import logging
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 from config import get_bot_token
-from handlers import commands
+from handlers import commands,from handlers import commands, messages
 from handlers.inline import register_inline_handlers
 
 # Configure logging
