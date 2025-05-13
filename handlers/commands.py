@@ -6,9 +6,13 @@
 from telegram import Update
 from telegram.ext import ContextTypes
 from datetime import datetime
+from utils.helpers import notify_admin
 
-# /start command
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    await update.message.reply_text("Hello! Welcome to the bot.")
+    await notify_admin(context, user)  # Notify admin when user starts
+# /start command
     await update.message.reply_text("Hello! I am your Echo Bot.\nSend me any text or use /help to see commands.")
 
 # /help command
