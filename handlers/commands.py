@@ -1,4 +1,6 @@
- 
+async def id_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.effective_user.id
+    await update.message.reply_text(f"Your Telegram ID is: {user_id}") 
 
 
 from telegram import Update
